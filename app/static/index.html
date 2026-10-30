@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bourse Score</title>
+  <meta name="description" content="Score d'analyse temporel pour savoir si une action est favorable à l'investissement.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Bourse Score">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Bourse Score</h1>
+    <form id="search" autocomplete="off">
+      <input id="ticker" type="search" inputmode="text" autocapitalize="characters" spellcheck="false"
+             placeholder="Symbole (ex. AAPL, MC.PA, SPY)" aria-label="Symbole boursier" maxlength="15" required>
+      <button type="submit">Analyser</button>
+    </form>
+    <div id="chips" class="chips" aria-label="Suggestions"></div>
+  </header>
+
+  <main>
+    <p id="status" class="status" role="status">Entrez un symbole pour obtenir son score.</p>
+
+    <section id="result" hidden>
+      <div class="card hero">
+        <div class="hero-head">
+          <div>
+            <h2 id="r-ticker"></h2>
+            <p class="muted"><span id="r-price"></span> <span id="r-change"></span> · <span id="r-date"></span></p>
+          </div>
+          <div id="gauge" class="gauge" role="img" aria-label="Score global"><span id="g-score"></span></div>
+        </div>
+        <p id="g-verdict" class="verdict"></p>
+      </div>
+
+      <p id="validation" class="notice" hidden></p>
+
+      <div id="horizons" class="grid"></div>
+
+      <div class="card">
+        <div class="row">
+          <h3>Évolution du score</h3>
+          <div id="tabs" class="tabs" role="tablist"></div>
+        </div>
+        <canvas id="chart" height="220"></canvas>
+        <p class="muted small">Vert ≥ 65 : favorable · Rouge &lt; 40 : défavorable. Historique recalculé avec les modèles actuels.</p>
+      </div>
+
+      <details class="card">
+        <summary>Indicateurs détaillés</summary>
+        <table id="indicators"></table>
+      </details>
+
+      <p id="model" class="muted small"></p>
+      <p id="disclaimer" class="muted small"></p>
+    </section>
+  </main>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

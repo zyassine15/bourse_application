@@ -1,0 +1,16 @@
+# Blueprint Render : https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: bourse-score
+    runtime: docker
+    plan: free
+    region: frankfurt
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass # déploie uniquement si la CI GitHub est verte
+    envVars:
+      - key: BOURSE_ML_WEIGHT
+        value: "0.6"
+      - key: BOURSE_CACHE_TTL_SECONDS
+        value: "900"
+      - key: BOURSE_LOG_LEVEL
+        value: INFO

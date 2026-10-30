@@ -218,3 +218,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+mlruns/
+mlartifacts/
+.ruff_cache/
+mlflow.db
