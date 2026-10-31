@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Bourse Score</title>
-  <meta name="description" content="Score d'analyse temporel pour savoir si une action est favorable à l'investissement.">
+  <meta name="description" content="Score d'analyse temporel des actions marocaines, et des actions et ETF américains et français.">
   <meta name="theme-color" content="#0f172a">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
@@ -18,10 +18,12 @@
 <body>
   <header>
     <h1>Bourse Score</h1>
+    <div id="market-filter" class="seg" role="radiogroup" aria-label="Marché"></div>
     <form id="search" autocomplete="off">
-      <input id="ticker" type="search" inputmode="text" autocapitalize="characters" spellcheck="false"
-             placeholder="Symbole (ex. AAPL, MC.PA, SPY)" aria-label="Symbole boursier" maxlength="15" required>
+      <input id="ticker" type="search" inputmode="text" spellcheck="false"
+             placeholder="Nom ou symbole (ex. IAM, Stellantis)" aria-label="Rechercher une valeur" maxlength="40" required>
       <button type="submit">Analyser</button>
+      <ul id="suggest" class="suggest" hidden></ul>
     </form>
     <div id="chips" class="chips" aria-label="Suggestions"></div>
   </header>
@@ -34,18 +36,31 @@
         <div class="hero-head">
           <div>
             <h2 id="r-ticker"></h2>
+            <p class="name"><span id="r-name"></span> <span id="r-badges"></span></p>
             <p class="muted"><span id="r-price"></span> <span id="r-change"></span> · <span id="r-date"></span></p>
           </div>
-          <div id="gauge" class="gauge" role="img" aria-label="Score global"><span id="g-score"></span></div>
+          <div id="gauge" class="gauge score-only" role="img" aria-label="Score global"><span id="g-score"></span></div>
         </div>
-        <p id="g-verdict" class="verdict"></p>
+        <p id="g-verdict" class="verdict score-only"></p>
       </div>
 
-      <p id="validation" class="notice" hidden></p>
-
-      <div id="horizons" class="grid"></div>
-
       <div class="card">
+        <div class="row">
+          <h3>Cours <span id="p-perf" class="perf"></span></h3>
+          <div id="range-tabs" class="tabs" role="tablist"></div>
+        </div>
+        <p id="p-readout" class="readout muted small"></p>
+        <canvas id="price-chart" class="interactive" height="240" aria-label="Cours de clôture"></canvas>
+        <p class="legend small"><i class="sw sw-close"></i> Clôture <i class="sw sw-sma50"></i> MM50 <i class="sw sw-sma200"></i> MM200</p>
+      </div>
+
+      <p id="instrument-notice" class="notice" hidden></p>
+      <p id="validation" class="notice score-only" hidden></p>
+      <p id="liquidity" class="notice score-only" hidden></p>
+
+      <div id="horizons" class="grid score-only"></div>
+
+      <div class="card score-only">
         <div class="row">
           <h3>Évolution du score</h3>
           <div id="tabs" class="tabs" role="tablist"></div>
@@ -54,12 +69,12 @@
         <p class="muted small">Vert ≥ 65 : favorable · Rouge &lt; 40 : défavorable. Historique recalculé avec les modèles actuels.</p>
       </div>
 
-      <details class="card">
+      <details class="card" id="indicators-card">
         <summary>Indicateurs détaillés</summary>
-        <table id="indicators"></table>
+        <div id="indicators" class="indicators"></div>
       </details>
 
-      <p id="model" class="muted small"></p>
+      <p id="model" class="muted small score-only"></p>
       <p id="disclaimer" class="muted small"></p>
     </section>
   </main>

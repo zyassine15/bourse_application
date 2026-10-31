@@ -28,7 +28,7 @@ FEATURE_NAMES: list[str] = [
 MIN_ROWS = 260
 
 
-def _rsi(close: pd.Series, window: int = 14) -> pd.Series:
+def rsi(close: pd.Series, window: int = 14) -> pd.Series:
     delta = close.diff()
     gain = delta.clip(lower=0).ewm(alpha=1 / window, adjust=False, min_periods=window).mean()
     loss = (-delta.clip(upper=0)).ewm(alpha=1 / window, adjust=False, min_periods=window).mean()
@@ -60,7 +60,7 @@ def compute_features(prices: pd.DataFrame) -> pd.DataFrame:
             "ret_21": close.pct_change(21),
             "ret_63": close.pct_change(63),
             "ret_126": close.pct_change(126),
-            "rsi_14": _rsi(close),
+            "rsi_14": rsi(close),
             "macd_hist": macd_hist,
             "px_vs_sma20": close / sma20 - 1,
             "px_vs_sma50": close / sma50 - 1,

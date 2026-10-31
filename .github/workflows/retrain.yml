@@ -22,6 +22,10 @@ jobs:
           cache: pip
           cache-dependency-path: requirements*.txt
       - run: pip install -r requirements-dev.txt
+      - name: Rafraîchir l'univers des actions
+        run: |
+          python -m training.refresh_instruments
+          python -m training.refresh_international
       - name: Train (exit code 2 = gate qualité non passé, modèle actuel conservé)
         id: train
         env:
@@ -43,12 +47,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if git diff --quiet -- models; then echo "Aucun changement"; exit 0; fi
+          if git diff --quiet -- models app/instruments.json app/international.json; then echo "Aucun changement"; exit 0; fi
           branch="retrain/$(date +%Y%m%d)"
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git checkout -b "$branch"
-          git add models
+          git add models app/instruments.json app/international.json
           git commit -m "chore(model): retrain $(date +%Y-%m-%d)"
           git push -u origin "$branch"
           gh pr create --fill --title "Retrain $(date +%Y-%m-%d)" \

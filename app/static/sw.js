@@ -1,6 +1,6 @@
 // Service worker : coque applicative en cache (démarrage instantané/hors-ligne),
 // les appels /api restent toujours réseau (jamais de score périmé servi comme frais).
-const CACHE = "bourse-shell-v1";
+const CACHE = "bourse-shell-v3";
 const SHELL = ["/", "/styles.css", "/app.js", "/manifest.webmanifest", "/icons/icon-192.png"];
 
 self.addEventListener("install", (e) => {
@@ -19,7 +19,7 @@ self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET" || url.origin !== location.origin || url.pathname.startsWith("/api")) return;
   // Réseau d'abord (assets à jour après un déploiement), cache en secours hors-ligne.
   e.respondWith(
-    fetch(e.request)
+    fetch(e.request, { cache: "no-cache" })
       .then((res) => {
         if (res.ok) caches.open(CACHE).then((c) => c.put(e.request, res.clone()));
         return res;

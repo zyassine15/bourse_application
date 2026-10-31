@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 
 from app.features import FEATURE_NAMES
+from app.instruments import ML_MARKET
 from app.scoring import ml_to_score
 
 logger = logging.getLogger(__name__)
@@ -59,21 +60,38 @@ class ModelRegistry:
         self.metadata = meta
         logger.info("Modèle %s chargé (%s)", meta.get("version"), ", ".join(self.models))
 
+    def applies_to(self, market: str) -> bool:
+        return market == ML_MARKET and bool(self.models)
+
     @property
     def version(self) -> str:
         return self.metadata.get("version", "rules-only") if self.models else "rules-only"
 
-    def validation(self) -> dict:
+    def validation(self, market: str = ML_MARKET) -> dict:
         """Le score a-t-il montré un pouvoir prédictif en backtest ? (IC de Spearman, t-stat >= 2)"""
+        if market != ML_MARKET:
+            return {
+                "status": "unknown",
+                "message": "Aucun backtest sur ces valeurs internationales : le score est purement descriptif "
+                "(indicateurs techniques) et son pouvoir prédictif n'est pas démontré.",
+            }
         horizons = self.backtest.get("horizons")
         if not horizons:
             return {"status": "unknown", "message": "Aucun backtest disponible : score purement descriptif."}
+        labels = {"court": "court terme", "moyen": "moyen terme", "long": "long terme"}
+        inverted = [labels.get(h, h) for h, r in horizons.items() if r["ic_mean"] < 0 and r["ic_tstat"] <= -2]
+        if inverted:
+            return {
+                "status": "inverted",
+                "message": f"Attention ({', '.join(inverted)}) : en backtest, un score élevé a plutôt été suivi de rendements "
+                "plus faibles (retour à la moyenne). N'utilisez pas ce score comme signal d'achat.",
+            }
         validated = [h for h, r in horizons.items() if r["ic_mean"] > 0 and r["ic_tstat"] >= 2]
         if not validated:
             return {
                 "status": "not_validated",
-                "message": "Le backtest ne démontre pas de pouvoir prédictif : ce score décrit la situation "
-                "technique de l'action, il ne prédit pas son évolution.",
+                "message": "Le backtest ne démontre pas de pouvoir prédictif (historique court, depuis déc. 2023) : "
+                "ce score décrit la situation technique de l'action, il ne prédit pas son évolution.",
             }
         status = "validated" if len(validated) == len(horizons) else "partial"
         return {"status": status, "message": f"Pouvoir prédictif démontré en backtest sur : {', '.join(validated)}."}

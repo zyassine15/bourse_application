@@ -24,19 +24,33 @@ from sklearn.metrics import accuracy_score, brier_score_loss, roc_auc_score
 
 from app.data import DataUnavailableError, download_prices
 from app.features import FEATURE_NAMES, prepare_features
+from app.instruments import ML_MARKET, load_instruments
 from app.scoring import HORIZONS
 
 logger = logging.getLogger("training")
 
-UNIVERSE = [
-    # US large caps
-    "AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA", "JPM", "V", "JNJ",
-    "PG", "XOM", "KO", "PEP", "WMT", "DIS", "NFLX", "INTC", "CSCO", "BAC",
-    # Europe
-    "MC.PA", "OR.PA", "AIR.PA", "SAN.PA", "TTE.PA", "SAP.DE", "SIE.DE", "ASML.AS",
-    # ETF / indices
-    "SPY", "QQQ", "IWM", "EFA", "GLD", "TLT",
-]  # fmt: skip
+MIN_SESSIONS = 300  # historique minimal d'une valeur pour entrer dans l'entraînement
+
+
+# Les valeurs peu liquides ont des prix figés (rendement nul) : un modèle y apprend « pas de hausse = illiquide »
+# (AUC ≈ 0,55 avec la seule illiquidité, mesuré) au lieu d'un signal exploitable. On les exclut.
+MIN_TRADED_RATIO = 0.9
+LIQUIDITY_WINDOW = 250
+
+
+def liquid_only(frames: dict[str, pd.DataFrame]) -> dict[str, pd.DataFrame]:
+    kept = {t: f for t, f in frames.items() if (f["Volume"].tail(LIQUIDITY_WINDOW) > 0).mean() >= MIN_TRADED_RATIO}
+    logger.info("Univers liquide : %d/%d valeurs", len(kept), len(frames))
+    return kept
+
+
+def default_universe() -> list[str]:
+    """Actions du marché d'entraînement (Bourse de Casablanca) avec assez d'historique.
+
+    Les valeurs internationales sont exclues : le modèle ne leur est jamais appliqué.
+    """
+    return sorted(s for s, i in load_instruments().items() if i.market == ML_MARKET and i.sessions >= MIN_SESSIONS)
+
 
 MODEL_PARAMS = dict(
     max_depth=3,
@@ -130,11 +144,11 @@ def feature_reference(data: pd.DataFrame, bins: int = 10) -> dict:
     return ref
 
 
-def download_universe(tickers: list[str], period: str) -> dict[str, pd.DataFrame]:
+def download_universe(tickers: list[str]) -> dict[str, pd.DataFrame]:
     frames = {}
     for t in tickers:
         try:
-            frames[t] = download_prices(t, period=period)
+            frames[t] = download_prices(t)
         except DataUnavailableError as exc:
             logger.warning("Ticker ignoré %s : %s", t, exc)
     return frames
@@ -142,8 +156,8 @@ def download_universe(tickers: list[str], period: str) -> dict[str, pd.DataFrame
 
 def run(args: argparse.Namespace) -> int:
     out_dir = Path(args.out)
-    tickers = args.tickers or UNIVERSE
-    frames = download_universe(tickers, args.period)
+    tickers = args.tickers or default_universe()
+    frames = liquid_only(download_universe(tickers))
     if len(frames) < 5:
         logger.error("Trop peu de tickers téléchargés (%d)", len(frames))
         return 1
@@ -173,7 +187,7 @@ def run(args: argparse.Namespace) -> int:
     horizons_meta: dict[str, dict] = {}
     with run_ctx:
         if mlflow:
-            mlflow.log_params({**MODEL_PARAMS, "period": args.period, "n_tickers": len(frames), "min_auc": args.min_auc})
+            mlflow.log_params({**MODEL_PARAMS, "n_tickers": len(frames), "min_auc": args.min_auc})
         for name in HORIZONS:
             metrics = evaluate(data, name, args.splits)
             champion = old_meta.get("horizons", {}).get(name, {}).get("metrics", {}).get("auc_mean")
@@ -213,7 +227,9 @@ def run(args: argparse.Namespace) -> int:
             "version": version,
             "trained_at": datetime.now(UTC).isoformat(timespec="seconds"),
             "git_sha": git_sha(),
-            "data_period": args.period,
+            "data_source": "Bourse de Casablanca",
+            "universe_filter": f"échanges sur >= {MIN_TRADED_RATIO:.0%} des {LIQUIDITY_WINDOW} dernières séances",
+            "data_start": str(data.index.min().date()),
             "data_end": str(data.index.max().date()),
             "n_tickers": len(frames),
             "tickers": sorted(frames),
@@ -232,10 +248,11 @@ def run(args: argparse.Namespace) -> int:
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--out", default="models")
-    p.add_argument("--period", default="10y")
     p.add_argument("--tickers", nargs="*")
     p.add_argument("--splits", type=int, default=5)
-    p.add_argument("--min-auc", type=float, default=0.52, help="AUC walk-forward minimale pour publier un modèle")
+    p.add_argument(
+        "--min-auc", type=float, default=0.55, help="AUC walk-forward minimale pour publier un modèle (> benchmark illiquidité)"
+    )
     p.add_argument("--tolerance", type=float, default=0.01, help="Régression d'AUC tolérée vs modèle en production")
     return p.parse_args(argv)
 

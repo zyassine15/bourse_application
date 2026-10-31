@@ -107,6 +107,7 @@ def test_validation_status_from_backtest(tmp_path):
 
 
 def test_analyze_uses_ml_when_model_available(tmp_path):
+    from app.instruments import Instrument
     from app.service import analyze
 
     data = _dataset()
@@ -118,9 +119,59 @@ def test_analyze_uses_ml_when_model_available(tmp_path):
         meta["horizons"][name] = {"file": f"{name}.joblib", "base_rate": float(y.mean())}
     (tmp_path / "metadata.json").write_text(json.dumps(meta))
 
-    result, _ = analyze("TEST", make_prices(), ModelRegistry(tmp_path), ml_weight=0.6, history_days=60)
+    ma = Instrument("TEST", "Société test", 600, None, None)
+    result, _ = analyze(ma, make_prices(), ModelRegistry(tmp_path), ml_weight=0.6, history_days=60)
     assert result["model_version"] == "test-2"
     for h in result["horizons"].values():
         assert h["ml_score"] is not None
         assert h["score"] == pytest.approx(0.6 * h["ml_score"] + 0.4 * h["rule_score"], abs=0.2)
     assert len(result["history"]["dates"]) == 60
+
+
+def test_validation_flags_inverted_signal(tmp_path):
+    report = {"horizons": {"court": {"ic_mean": -0.09, "ic_tstat": -4.2}, "long": {"ic_mean": 0.07, "ic_tstat": 1.6}}}
+    (tmp_path / "backtest.json").write_text(json.dumps(report))
+    validation = ModelRegistry(tmp_path).validation()
+    assert validation["status"] == "inverted"
+    assert "court terme" in validation["message"]
+
+
+def test_liquid_only_filters_illiquid_names():
+    from training.train import liquid_only
+
+    liquid = make_prices(400)
+    illiquid = make_prices(400)
+    illiquid.iloc[:, illiquid.columns.get_loc("Volume")] = np.where(np.arange(400) % 4 == 0, 1000, 0)
+    assert set(liquid_only({"A": liquid, "B": illiquid})) == {"A"}
+
+
+def test_ml_model_not_applied_to_international_market(tmp_path):
+    from app.instruments import Instrument
+    from app.service import analyze
+
+    data = _dataset()
+    labelled = data.dropna(subset=["fwd_court"])
+    y = (labelled["fwd_court"] > 0).astype(int)
+    joblib.dump(new_estimator().fit(labelled[FEATURE_NAMES], y), tmp_path / "c.joblib")
+    meta = {"version": "v9", "features": FEATURE_NAMES, "horizons": {"court": {"file": "c.joblib", "base_rate": float(y.mean())}}}
+    (tmp_path / "metadata.json").write_text(json.dumps(meta))
+    registry = ModelRegistry(tmp_path)
+    prices = make_prices()
+
+    ma, _ = analyze(Instrument("A", "A", 600, None, None), prices, registry, 0.3, 60)
+    intl, _ = analyze(Instrument("B", "B", 600, None, None, market="INTL", currency="EUR", kind="ETF"), prices, registry, 0.3, 60)
+    assert ma["model_version"] == "v9" and ma["horizons"]["court"]["ml_score"] is not None
+    assert intl["model_version"] == "rules-only"
+    assert intl["horizons"]["court"]["ml_score"] is None
+    assert intl["horizons"]["court"]["score"] == intl["horizons"]["court"]["rule_score"]
+
+
+def test_training_universe_excludes_international_instruments():
+    from app.instruments import load_instruments
+    from training.train import default_universe
+
+    universe = default_universe()
+    assert len(universe) > 50
+    instruments = load_instruments()
+    assert {instruments[s].market for s in universe} == {"MA"}
+    assert not {"CW8.PA", "STLAP.PA", "SPCX"} & set(universe)

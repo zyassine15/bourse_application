@@ -2,7 +2,7 @@
 
 Usage : python -m training.backtest   -> écrit models/backtest.json (exposé par /api/model)
 
-Mesures par horizon (univers d'entraînement, 10 ans) :
+Mesures par horizon (actions de la Bourse de Casablanca, historique disponible depuis déc. 2023) :
 - IC de Spearman score/rendement futur, par date puis moyenné (+ t-stat approximatif) ;
 - rendement futur moyen et taux de hausse par verdict (Favorable / Neutre / Défavorable).
 """
@@ -17,7 +17,7 @@ import numpy as np
 import pandas as pd
 
 from app.scoring import HORIZONS, rule_score, verdict
-from training.train import UNIVERSE, build_dataset, download_universe
+from training.train import build_dataset, default_universe, download_universe, liquid_only
 
 logger = logging.getLogger("backtest")
 
@@ -59,10 +59,9 @@ def backtest(data: pd.DataFrame) -> dict:
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--out", default="models")
-    p.add_argument("--period", default="10y")
     args = p.parse_args()
 
-    frames = download_universe(UNIVERSE, args.period)
+    frames = liquid_only(download_universe(default_universe()))
     data = build_dataset(frames)
     report = {
         "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),

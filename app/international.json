@@ -1,0 +1,87 @@
+{
+ "source": "Yahoo Finance",
+ "generated_at": "2026-10-31T00:00:35+00:00",
+ "instruments": [
+  {
+   "symbol": "STLAP.PA",
+   "name": "Stellantis",
+   "kind": "Action",
+   "sessions": 1281,
+   "first_date": "2021-11-01",
+   "last_date": "2026-10-30",
+   "currency": "EUR",
+   "exchange": "Paris"
+  },
+  {
+   "symbol": "NXI.PA",
+   "name": "Nexity",
+   "kind": "Action",
+   "sessions": 1281,
+   "first_date": "2021-11-01",
+   "last_date": "2026-10-30",
+   "currency": "EUR",
+   "exchange": "Paris"
+  },
+  {
+   "symbol": "STMPA.PA",
+   "name": "STMicroelectronics",
+   "kind": "Action",
+   "sessions": 1281,
+   "first_date": "2021-11-01",
+   "last_date": "2026-10-30",
+   "currency": "EUR",
+   "exchange": "Paris"
+  },
+  {
+   "symbol": "SPCX",
+   "name": "SpaceX (Space Exploration Technologies)",
+   "kind": "Action",
+   "sessions": 98,
+   "first_date": "2026-06-12",
+   "last_date": "2026-10-30",
+   "currency": "USD",
+   "exchange": "NasdaqGS"
+  },
+  {
+   "symbol": "LVE.PA",
+   "name": "Amundi EURO STOXX 50 Daily (2x) Leveraged UCITS ETF Acc",
+   "kind": "ETF",
+   "leverage": 2,
+   "sessions": 1281,
+   "first_date": "2021-11-01",
+   "last_date": "2026-10-30",
+   "currency": "EUR",
+   "exchange": "Paris"
+  },
+  {
+   "symbol": "CW8.PA",
+   "name": "Amundi MSCI World UCITS ETF Acc",
+   "kind": "ETF",
+   "sessions": 1281,
+   "first_date": "2021-11-01",
+   "last_date": "2026-10-30",
+   "currency": "EUR",
+   "exchange": "Paris"
+  },
+  {
+   "symbol": "PUST.PA",
+   "name": "Amundi PEA Nasdaq-100 UCITS ETF Acc",
+   "kind": "ETF",
+   "sessions": 1281,
+   "first_date": "2021-11-01",
+   "last_date": "2026-10-30",
+   "currency": "EUR",
+   "exchange": "Paris"
+  },
+  {
+   "symbol": "SEMI.AS",
+   "name": "iShares MSCI Global Semiconductors UCITS ETF USD Acc",
+   "kind": "ETF",
+   "sessions": 1281,
+   "first_date": "2021-11-01",
+   "last_date": "2026-10-30",
+   "currency": "USD",
+   "exchange": "Amsterdam"
+  }
+ ]
+}

@@ -11,9 +11,11 @@ class Settings(BaseSettings):
 
     models_dir: Path = ROOT / "models"
     cache_ttl_seconds: int = 900
+    # Les états financiers changent au plus chaque trimestre : un cache d'une journée suffit.
+    fundamentals_ttl_seconds: int = 86400
     history_days: int = 120
     # Poids du modèle ML dans le score final (le reste revient aux règles techniques).
-    ml_weight: float = 0.6
+    ml_weight: float = 0.3
     log_level: str = "INFO"
 
 

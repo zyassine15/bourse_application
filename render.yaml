@@ -9,7 +9,7 @@ services:
     autoDeployTrigger: checksPass # déploie uniquement si la CI GitHub est verte
     envVars:
       - key: BOURSE_ML_WEIGHT
-        value: "0.6"
+        value: "0.3"
       - key: BOURSE_CACHE_TTL_SECONDS
         value: "900"
       - key: BOURSE_LOG_LEVEL
