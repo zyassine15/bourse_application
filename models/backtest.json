@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T01:35:43+00:00",
+  "generated_at": "2026-11-02T13:04:49+00:00",
   "n_tickers": 52,
   "horizons": {
     "court": {
@@ -9,23 +9,23 @@
       "n_periods": 103,
       "by_verdict": {
         "D\u00e9favorable": {
-          "mean_return": 0.0071,
-          "hit_rate": 0.5375,
-          "n": 4759
+          "mean_return": 0.0069,
+          "hit_rate": 0.5364,
+          "n": 4776
         },
         "Favorable": {
           "mean_return": 0.005,
-          "hit_rate": 0.4225,
-          "n": 8287
+          "hit_rate": 0.4222,
+          "n": 8292
         },
         "Neutre": {
           "mean_return": -0.0006,
-          "hit_rate": 0.4386,
-          "n": 12824
+          "hit_rate": 0.4378,
+          "n": 12854
         }
       },
       "unconditional_mean_return": 0.0026,
-      "unconditional_hit_rate": 0.4516
+      "unconditional_hit_rate": 0.451
     },
     "moyen": {
       "days": 21,
@@ -34,23 +34,23 @@
       "n_periods": 24,
       "by_verdict": {
         "D\u00e9favorable": {
-          "mean_return": 0.0034,
-          "hit_rate": 0.4992,
-          "n": 4860
+          "mean_return": 0.0028,
+          "hit_rate": 0.4958,
+          "n": 4895
         },
         "Favorable": {
           "mean_return": 0.0377,
-          "hit_rate": 0.494,
-          "n": 7498
+          "hit_rate": 0.4939,
+          "n": 7499
         },
         "Neutre": {
-          "mean_return": 0.0016,
-          "hit_rate": 0.4177,
-          "n": 12680
+          "mean_return": 0.0015,
+          "hit_rate": 0.4173,
+          "n": 12696
         }
       },
-      "unconditional_mean_return": 0.0127,
-      "unconditional_hit_rate": 0.4563
+      "unconditional_mean_return": 0.0126,
+      "unconditional_hit_rate": 0.4555
     },
     "long": {
       "days": 63,
@@ -59,23 +59,23 @@
       "n_periods": 8,
       "by_verdict": {
         "D\u00e9favorable": {
-          "mean_return": -0.0119,
-          "hit_rate": 0.3632,
-          "n": 4430
+          "mean_return": -0.0125,
+          "hit_rate": 0.362,
+          "n": 4458
         },
         "Favorable": {
           "mean_return": 0.1118,
           "hit_rate": 0.5408,
-          "n": 8385
+          "n": 8386
         },
         "Neutre": {
-          "mean_return": 0.033,
-          "hit_rate": 0.4606,
-          "n": 10039
+          "mean_return": 0.0328,
+          "hit_rate": 0.4598,
+          "n": 10062
         }
       },
-      "unconditional_mean_return": 0.0532,
-      "unconditional_hit_rate": 0.4712
+      "unconditional_mean_return": 0.0529,
+      "unconditional_hit_rate": 0.4704
     }
   }
 }
