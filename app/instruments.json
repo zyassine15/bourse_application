@@ -1,553 +1,553 @@
 {
  "source": "Bourse de Casablanca",
  "currency": "MAD",
- "generated_at": "2026-10-30T01:22:31+00:00",
+ "generated_at": "2026-11-09T13:35:43+00:00",
  "instruments": [
   {
    "symbol": "ADH",
    "name": "DOUJA PROM ADDOHA",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "ADI",
    "name": "ALLIANCES",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "AFI",
-   "name": "AFRIC INDUSTRIES SA",
-   "sessions": 715,
+   "name": "AFRIC INDUSTRIES",
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "AFM",
    "name": "AFMA",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "AGM",
    "name": "AGMA",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "AKT",
    "name": "AKDITAL",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "ALM",
    "name": "ALUMINIUM DU MAROC",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "ARD",
    "name": "ARADEI CAPITAL",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "ATH",
    "name": "AUTO HALL",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "ATL",
    "name": "ATLANTASANAD",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "ATW",
    "name": "ATTIJARIWAFA BANK",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "BAL",
    "name": "BALIMA",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "BCI",
    "name": "BMCI",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "BCP",
    "name": "BCP",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "BOA",
    "name": "BANK OF AFRICA",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "CAP",
-   "name": "CASH PLUS S.A",
-   "sessions": 219,
+   "name": "CASH PLUS",
+   "sessions": 224,
    "first_date": "2025-12-08",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "CDM",
    "name": "CDM",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "CFG",
    "name": "CFG BANK",
-   "sessions": 704,
+   "sessions": 709,
    "first_date": "2023-12-18",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "CIH",
    "name": "CIH",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "CMA",
    "name": "CIMENTS DU MAROC",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "CMG",
    "name": "CMGP GROUP",
-   "sessions": 460,
+   "sessions": 465,
    "first_date": "2024-12-16",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "CMT",
    "name": "MINIERE TOUISSIT",
-   "sessions": 678,
+   "sessions": 683,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "COL",
    "name": "COLORADO",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "CRS",
    "name": "CARTIER SAADA",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "CSR",
    "name": "COSUMAR",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "CTM",
    "name": "CTM",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "DHO",
-   "name": "DELTA HOLDING ",
-   "sessions": 715,
+   "name": "DELTA HOLDING",
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "DRI",
    "name": "DARI COUSPATE",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "DWY",
    "name": "DISWAY",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "DYT",
    "name": "DISTY TECHNOLOGIES",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "EQD",
    "name": "EQDOM",
-   "sessions": 672,
+   "sessions": 677,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "FBR",
    "name": "FENIE BROSSETTE",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "GAZ",
    "name": "AFRIQUIA GAZ",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "GTM",
-   "name": "SGTM S.A",
-   "sessions": 213,
+   "name": "SGTM",
+   "sessions": 218,
    "first_date": "2025-12-16",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "HPS",
    "name": "HPS",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "IAM",
    "name": "ITISSALAT AL-MAGHRIB",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "IBC",
    "name": "IB MAROC.COM",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "IMO",
    "name": "IMMORENTE INVEST",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "INV",
    "name": "INVOLYS",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "JET",
    "name": "JET CONTRACTORS",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "LBV",
    "name": "LABEL VIE",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "LES",
    "name": "LESIEUR CRISTAL",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "LHM",
-   "name": "Holcim Maroc S.A",
-   "sessions": 715,
+   "name": "HOLCIM MAROC",
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "M2M",
    "name": "M2M Group",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "MAB",
    "name": "MAGHREBAIL",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "MDP",
    "name": "MED PAPER",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "MIC",
    "name": "MICRODATA",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "MLE",
    "name": "MAROC LEASING",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "MNG",
    "name": "MANAGEM",
-   "sessions": 715,
+   "sessions": 719,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "MOX",
    "name": "MAGHREB OXYGENE",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "MSA",
-   "name": "SODEP-Marsa Maroc",
-   "sessions": 715,
+   "name": "SODEP MARSA MAROC",
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "MUT",
    "name": "MUTANDIS SCA",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "NEJ",
    "name": "AUTO NEJMA",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "NKL",
    "name": "ENNAKL",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "OUL",
    "name": "OULMES",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "PRO",
-   "name": "PROMOPHARM S.A.",
-   "sessions": 715,
+   "name": "PROMOPHARM",
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "RDS",
    "name": "RESIDENCES DAR SAADA",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "REB",
    "name": "REBAB COMPANY",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "RIS",
    "name": "RISMA",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "S2M",
    "name": "S.M MONETIQUE",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "SAH",
    "name": "SANLAM MAROC",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "SBM",
    "name": "SOCIETE DES BOISSONS DU MAROC",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "SID",
    "name": "SONASID",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "SLF",
    "name": "SALAFIN",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "SMI",
    "name": "SMI",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "SNA",
    "name": "STOKVIS NORD AFRIQUE",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "SNP",
    "name": "SNEP",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "SOT",
    "name": "SOTHEMA",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "SRM",
    "name": "REALISATIONS MECANIQUES",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "STR",
    "name": "STROC INDUSTRIE",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "T2S",
    "name": "T2S GROUP HOLDING",
-   "sessions": 63,
+   "sessions": 68,
    "first_date": "2026-07-27",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "TGC",
-   "name": "TGCC S.A                       ",
-   "sessions": 715,
+   "name": "TGCC",
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "TMA",
    "name": "TOTALENERGIES MARKETING MAROC",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "TQM",
    "name": "TAQA MOROCCO",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "UMR",
    "name": "UNIMER",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "VCN",
    "name": "VICENNE",
-   "sessions": 316,
+   "sessions": 321,
    "first_date": "2025-07-15",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "WAA",
    "name": "WAFA ASSURANCE",
-   "sessions": 715,
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   },
   {
    "symbol": "ZDJ",
-   "name": "ZELLIDJA S.A",
-   "sessions": 715,
+   "name": "ZELLIDJA",
+   "sessions": 720,
    "first_date": "2023-12-01",
-   "last_date": "2026-10-29"
+   "last_date": "2026-11-05"
   }
  ]
 }

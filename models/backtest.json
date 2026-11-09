@@ -1,81 +1,81 @@
 {
-  "generated_at": "2026-10-30T01:35:43+00:00",
-  "n_tickers": 52,
+  "generated_at": "2026-11-09T13:39:51+00:00",
+  "n_tickers": 51,
   "horizons": {
     "court": {
       "days": 5,
-      "ic_mean": -0.0882,
-      "ic_tstat": -4.2,
-      "n_periods": 103,
+      "ic_mean": -0.0876,
+      "ic_tstat": -4.16,
+      "n_periods": 104,
       "by_verdict": {
         "D\u00e9favorable": {
-          "mean_return": 0.0071,
-          "hit_rate": 0.5375,
-          "n": 4759
+          "mean_return": 0.0064,
+          "hit_rate": 0.5305,
+          "n": 4720
         },
         "Favorable": {
-          "mean_return": 0.005,
-          "hit_rate": 0.4225,
-          "n": 8287
+          "mean_return": 0.0047,
+          "hit_rate": 0.4211,
+          "n": 8151
         },
         "Neutre": {
-          "mean_return": -0.0006,
-          "hit_rate": 0.4386,
-          "n": 12824
+          "mean_return": -0.0008,
+          "hit_rate": 0.4382,
+          "n": 12742
         }
       },
-      "unconditional_mean_return": 0.0026,
-      "unconditional_hit_rate": 0.4516
+      "unconditional_mean_return": 0.0023,
+      "unconditional_hit_rate": 0.4498
     },
     "moyen": {
       "days": 21,
-      "ic_mean": -0.0145,
-      "ic_tstat": -0.31,
+      "ic_mean": -0.0055,
+      "ic_tstat": -0.12,
       "n_periods": 24,
       "by_verdict": {
         "D\u00e9favorable": {
-          "mean_return": 0.0034,
-          "hit_rate": 0.4992,
-          "n": 4860
+          "mean_return": 0.0013,
+          "hit_rate": 0.4875,
+          "n": 4960
         },
         "Favorable": {
-          "mean_return": 0.0377,
-          "hit_rate": 0.494,
-          "n": 7498
+          "mean_return": 0.0369,
+          "hit_rate": 0.491,
+          "n": 7316
         },
         "Neutre": {
-          "mean_return": 0.0016,
-          "hit_rate": 0.4177,
-          "n": 12680
+          "mean_return": 0.0009,
+          "hit_rate": 0.4174,
+          "n": 12521
         }
       },
-      "unconditional_mean_return": 0.0127,
-      "unconditional_hit_rate": 0.4563
+      "unconditional_mean_return": 0.0116,
+      "unconditional_hit_rate": 0.4531
     },
     "long": {
       "days": 63,
-      "ic_mean": 0.0714,
-      "ic_tstat": 1.6,
+      "ic_mean": 0.0745,
+      "ic_tstat": 1.74,
       "n_periods": 8,
       "by_verdict": {
         "D\u00e9favorable": {
-          "mean_return": -0.0119,
-          "hit_rate": 0.3632,
-          "n": 4430
+          "mean_return": -0.0147,
+          "hit_rate": 0.3556,
+          "n": 4469
         },
         "Favorable": {
-          "mean_return": 0.1118,
-          "hit_rate": 0.5408,
-          "n": 8385
+          "mean_return": 0.1067,
+          "hit_rate": 0.5349,
+          "n": 8159
         },
         "Neutre": {
-          "mean_return": 0.033,
+          "mean_return": 0.0323,
           "hit_rate": 0.4606,
-          "n": 10039
+          "n": 10027
         }
       },
-      "unconditional_mean_return": 0.0532,
-      "unconditional_hit_rate": 0.4712
+      "unconditional_mean_return": 0.0498,
+      "unconditional_hit_rate": 0.4666
     }
   }
 }

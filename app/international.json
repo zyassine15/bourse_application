@@ -1,14 +1,14 @@
 {
  "source": "Yahoo Finance",
- "generated_at": "2026-10-31T00:00:35+00:00",
+ "generated_at": "2026-11-09T13:35:45+00:00",
  "instruments": [
   {
    "symbol": "STLAP.PA",
    "name": "Stellantis",
    "kind": "Action",
    "sessions": 1281,
-   "first_date": "2021-11-01",
-   "last_date": "2026-10-30",
+   "first_date": "2021-11-09",
+   "last_date": "2026-11-09",
    "currency": "EUR",
    "exchange": "Paris"
   },
@@ -17,8 +17,8 @@
    "name": "Nexity",
    "kind": "Action",
    "sessions": 1281,
-   "first_date": "2021-11-01",
-   "last_date": "2026-10-30",
+   "first_date": "2021-11-09",
+   "last_date": "2026-11-09",
    "currency": "EUR",
    "exchange": "Paris"
   },
@@ -27,8 +27,8 @@
    "name": "STMicroelectronics",
    "kind": "Action",
    "sessions": 1281,
-   "first_date": "2021-11-01",
-   "last_date": "2026-10-30",
+   "first_date": "2021-11-09",
+   "last_date": "2026-11-09",
    "currency": "EUR",
    "exchange": "Paris"
   },
@@ -36,9 +36,9 @@
    "symbol": "SPCX",
    "name": "SpaceX (Space Exploration Technologies)",
    "kind": "Action",
-   "sessions": 98,
+   "sessions": 103,
    "first_date": "2026-06-12",
-   "last_date": "2026-10-30",
+   "last_date": "2026-11-06",
    "currency": "USD",
    "exchange": "NasdaqGS"
   },
@@ -48,8 +48,8 @@
    "kind": "ETF",
    "leverage": 2,
    "sessions": 1281,
-   "first_date": "2021-11-01",
-   "last_date": "2026-10-30",
+   "first_date": "2021-11-09",
+   "last_date": "2026-11-09",
    "currency": "EUR",
    "exchange": "Paris"
   },
@@ -58,8 +58,8 @@
    "name": "Amundi MSCI World UCITS ETF Acc",
    "kind": "ETF",
    "sessions": 1281,
-   "first_date": "2021-11-01",
-   "last_date": "2026-10-30",
+   "first_date": "2021-11-09",
+   "last_date": "2026-11-09",
    "currency": "EUR",
    "exchange": "Paris"
   },
@@ -68,8 +68,8 @@
    "name": "Amundi PEA Nasdaq-100 UCITS ETF Acc",
    "kind": "ETF",
    "sessions": 1281,
-   "first_date": "2021-11-01",
-   "last_date": "2026-10-30",
+   "first_date": "2021-11-09",
+   "last_date": "2026-11-09",
    "currency": "EUR",
    "exchange": "Paris"
   },
@@ -78,8 +78,8 @@
    "name": "iShares MSCI Global Semiconductors UCITS ETF USD Acc",
    "kind": "ETF",
    "sessions": 1281,
-   "first_date": "2021-11-01",
-   "last_date": "2026-10-30",
+   "first_date": "2021-11-09",
+   "last_date": "2026-11-09",
    "currency": "USD",
    "exchange": "Amsterdam"
   }
